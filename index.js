@@ -2,8 +2,8 @@ import 'dotenv/config';
 import { Alchemy, Network } from 'alchemy-sdk';
 import { ethers } from 'ethers';
 import { Utils } from 'alchemy-sdk';
-import ContractABI from "./contracts/ABI.json";
-import FFCContractABI from './contracts/FFCABI.json';
+import ContractABI from "./contracts/ABI.json" assert { type: "json" };
+import FFCContractABI from './contracts/FFCABI.json' assert { type: 'json' };
 
 const ContractAddress = process.env.CONTRACT_ADDRESS;
 const FFCContractAddress = process.env.FFCCONTRACT_ADDRESS;
