@@ -2,7 +2,9 @@
   {
     "inputs": [
       { "internalType": "string", "name": "_unRevealedUri", "type": "string" },
-      { "internalType": "address", "name": "_withdrawalAddress", "type": "address" }
+      { "internalType": "address", "name": "_withdrawalAddress", "type": "address" },
+      { "internalType": "address", "name": "_royaltyAddress", "type": "address" },
+      { "internalType": "uint96", "name": "_royaltyBips", "type": "uint96" }
     ],
     "stateMutability": "nonpayable",
     "type": "constructor"
@@ -238,6 +240,19 @@
   },
   {
     "inputs": [
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
+      { "internalType": "uint256", "name": "salePrice", "type": "uint256" }
+    ],
+    "name": "royaltyInfo",
+    "outputs": [
+      { "internalType": "address", "name": "", "type": "address" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
       { "internalType": "address", "name": "from", "type": "address" },
       { "internalType": "address", "name": "to", "type": "address" },
       { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
@@ -277,15 +292,18 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "string", "name": "_newBaseURI", "type": "string" }],
-    "name": "setBaseURI",
+    "inputs": [{ "internalType": "uint256", "name": "_supply", "type": "uint256" }],
+    "name": "setMaxSupply",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "_supply", "type": "uint256" }],
-    "name": "setMaxSupply",
+    "inputs": [
+      { "internalType": "address", "name": "_receiver", "type": "address" },
+      { "internalType": "uint96", "name": "_royaltyFeeInBips", "type": "uint96" }
+    ],
+    "name": "setRoyalty",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -295,6 +313,13 @@
       { "internalType": "enum FryingFishClub.SaleConfig", "name": "_status", "type": "uint8" }
     ],
     "name": "setSaleConfig",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "string", "name": "_newBaseURI", "type": "string" }],
+    "name": "setTier1BaseURI",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -314,6 +339,13 @@
     "type": "function"
   },
   {
+    "inputs": [{ "internalType": "string", "name": "_newBaseURI", "type": "string" }],
+    "name": "setTier2BaseURI",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [{ "internalType": "uint256", "name": "_amount", "type": "uint256" }],
     "name": "setTier2Price",
     "outputs": [],
@@ -323,6 +355,13 @@
   {
     "inputs": [{ "internalType": "uint256", "name": "_supply", "type": "uint256" }],
     "name": "setTier2Supply",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "string", "name": "_newBaseURI", "type": "string" }],
+    "name": "setTier3BaseURI",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
