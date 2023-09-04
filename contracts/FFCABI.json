@@ -180,6 +180,13 @@
     "type": "function"
   },
   {
+    "inputs": [{ "internalType": "address", "name": "_owner", "type": "address" }],
+    "name": "getTokensByOwner",
+    "outputs": [{ "internalType": "uint256[]", "name": "", "type": "uint256[]" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       { "internalType": "address", "name": "owner", "type": "address" },
       { "internalType": "address", "name": "operator", "type": "address" }
@@ -279,6 +286,13 @@
     "name": "saleConfig",
     "outputs": [{ "internalType": "enum FryingFishClub.SaleConfig", "name": "", "type": "uint8" }],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "_newAdmin", "type": "address" }],
+    "name": "setAdmin",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
