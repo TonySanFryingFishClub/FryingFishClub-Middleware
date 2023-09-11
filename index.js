@@ -9,7 +9,7 @@ const ContractAddress = process.env.CONTRACT_ADDRESS;
 const FFCContractAddress = process.env.FFCCONTRACT_ADDRESS;
 const alchemyKey = process.env.ALCHEMY_ID;
 const walletKey = process.env.WALLET_KEY;
-const provider = new ethers.providers.AlchemyProvider('goerli', alchemyKey);
+const provider = new ethers.providers.AlchemyProvider('mainnet', alchemyKey);
 const signer = new ethers.Wallet(walletKey, provider);
 const NFTContract = new ethers.Contract(ContractAddress, ContractABI, signer);
 const contractInterface = new Utils.Interface(FFCContractABI);
@@ -21,7 +21,7 @@ const filter = {
 
 const config = {
   apiKey: alchemyKey,
-  network: Network.ETH_GOERLI,
+  network: Network.ETH_MAINNET,
 };
 
 const alchemy = new Alchemy(config);
